@@ -5,7 +5,8 @@ namespace com\hujiayucc\chatnio;
 $list = array(
     "data",
     "utils",
-    "exception"
+    "exception",
+    "bean"
 );
 // 引入所有需要的文件
 foreach ($list as $dir) {

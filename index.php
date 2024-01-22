@@ -16,8 +16,16 @@ try {
 }
 
 try {
-    echo "\n" . $chatNio->Pets()->buy(1);
+    echo "\n" . ($chatNio->Pets()->buy(1) ? "true" : "false");
     echo "\n" . $chatNio->Pets()->getQuota();
 } catch (AuthException|BuyException|FiledException $e) {
+    die($e->getMessage());
+}
+
+try {
+    $package = $chatNio->Pets()->Package();
+    echo "\ncert: " . ($package->isCert() ? "true" : "false");
+    echo "\nTeenager: " . ($package->isTeenager() ? "true" : "false");
+} catch (FiledException|AuthException $e) {
     die($e->getMessage());
 }
