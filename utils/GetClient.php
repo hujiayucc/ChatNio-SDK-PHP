@@ -12,15 +12,15 @@ class GetClient
 
     /**
      * GET请求
-     * @param string $url 请求url
+     * @param string $path 请求url路径
      * @param string $key 秘钥
      * @throws Exception 访问出错
      */
-    public function __construct(string $url, string $key)
+    public function __construct(string $path, string $key)
     {
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, ChatNio::$API . $url);
+        curl_setopt($ch, CURLOPT_URL, ChatNio::$API . $path);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: " . $key));
 

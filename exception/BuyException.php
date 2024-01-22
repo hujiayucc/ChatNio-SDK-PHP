@@ -1,16 +1,16 @@
 <?php
+
 namespace com\hujiayucc\chatnio\exception;
 
-/** 认证失败 */
-class AuthException extends \Exception
+/** 购买错误 */
+class BuyException extends \Exception
 {
     /**
-     * 认证失败
-     * @param string $message 失败原因
+     * 购买错误
+     * @param string $message 错误原因
      */
     public function __construct(string $message)
     {
         parent::__construct($message);
     }
 }
-
