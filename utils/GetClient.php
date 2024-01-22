@@ -47,9 +47,3 @@ class GetClient
         return $this->statusCode;
     }
 }
-
-?>
-
-}
-}
-}
