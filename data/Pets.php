@@ -31,14 +31,14 @@ class Pets
     public function getQuota(): float
     {
         try {
-            $getClient = new GetClient("/quota", $this->key);
+            $client = new GetClient("/quota", $this->key);
         } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
-        $json = json_decode($getClient->body());
-        if ($getClient->statusCode() == 401) {
+        $json = json_decode($client->body());
+        if ($client->statusCode() == 401) {
             throw new AuthException("Unauthorized");
-        } elseif ($getClient->statusCode() == 200 && $json->status) {
+        } elseif ($client->statusCode() == 200 && $json->status) {
             return $json->quota;
         }
         throw new FiledException("Filed Error");
@@ -59,15 +59,15 @@ class Pets
         }
 
         try {
-            $postClient = new PostClient("/buy", $this->key, array("quota" => $quota));
+            $client = new PostClient("/buy", $this->key, array("quota" => $quota));
         } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 
-        $json = json_decode($postClient->body());
-        if ($postClient->statusCode() == 401) {
+        $json = json_decode($client->body());
+        if ($client->statusCode() == 401) {
             throw new AuthException("Unauthorized");
-        } elseif ($postClient->statusCode() == 200) {
+        } elseif ($client->statusCode() == 200) {
             if ($json->status) return true;
             else throw new BuyException($json->error);
         }
@@ -83,15 +83,15 @@ class Pets
     public function Package(): Package
     {
         try {
-            $getClient = new GetClient("/package", $this->key);
+            $client = new GetClient("/package", $this->key);
         } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 
-        $json = json_decode($getClient->body());
-        if ($getClient->statusCode() == 401) {
+        $json = json_decode($client->body());
+        if ($client->statusCode() == 401) {
             throw new AuthException("Unauthorized");
-        } elseif ($getClient->statusCode() == 200 && $json->status) {
+        } elseif ($client->statusCode() == 200 && $json->status) {
             $data = $json->data;
             return new Package($data->cert, $data->teenager);
         }

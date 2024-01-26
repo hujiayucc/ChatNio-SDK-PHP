@@ -17,13 +17,15 @@ foreach ($list as $dir) {
 }
 
 use com\hujiayucc\chatnio\data\Pets;
+use com\hujiayucc\chatnio\data\Tasks;
 
 /** Use PHP Version 7.4+ */
 class ChatNio
 {
     /** @var string API地址 */
-    public static string $API = "";
+    public static string $API;
     private Pets $pets;
+    private Tasks $tasks;
 
     /**
      * 创建一个ChatNio
@@ -34,11 +36,18 @@ class ChatNio
     {
         ChatNio::$API = $point;
         $this->pets = new Pets($key);
+        $this->tasks = new Tasks($key);
     }
 
     /** 余额 */
     public function Pets(): Pets
     {
         return $this->pets;
+    }
+
+    /** 对话 */
+    public function Tasks(): Tasks
+    {
+        return $this->tasks;
     }
 }
