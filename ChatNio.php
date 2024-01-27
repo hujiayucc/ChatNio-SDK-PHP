@@ -6,7 +6,8 @@ $list = array(
     "data",
     "utils",
     "exception",
-    "bean"
+    "bean",
+    "enums"
 );
 // 引入所有需要的文件
 foreach ($list as $dir) {
@@ -17,6 +18,7 @@ foreach ($list as $dir) {
 }
 
 use com\hujiayucc\chatnio\data\Pets;
+use com\hujiayucc\chatnio\data\Subscribe;
 use com\hujiayucc\chatnio\data\Tasks;
 
 /** Use PHP Version 7.4+ */
@@ -26,6 +28,7 @@ class ChatNio
     public static string $API;
     private Pets $pets;
     private Tasks $tasks;
+    private Subscribe $subscribe;
 
     /**
      * 创建一个ChatNio
@@ -37,6 +40,7 @@ class ChatNio
         ChatNio::$API = $point;
         $this->pets = new Pets($key);
         $this->tasks = new Tasks($key);
+        $this->subscribe = new Subscribe($key);
     }
 
     /** 余额 */
@@ -49,5 +53,11 @@ class ChatNio
     public function Tasks(): Tasks
     {
         return $this->tasks;
+    }
+
+    /** 订阅和礼包 */
+    public function Subscribe(): Subscribe
+    {
+        return $this->subscribe;
     }
 }
