@@ -11,6 +11,13 @@
       "email": "hujiayucc@qq.com"
     }
   ],
+  "autoload": {
+    "files": [
+      "ChatNio.php",
+      "data/ChatAsync.php",
+      "data/ChatSync.php"
+    ]
+  },
   "require": {
     "textalk/websocket": "^1.6.3",
     "ext-json": "*",
