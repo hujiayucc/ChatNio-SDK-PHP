@@ -3,8 +3,8 @@
 namespace com\hujiayucc\chatnio;
 
 $list = array(
-    "data",
     "utils",
+    "data",
     "exception",
     "bean",
     "enums"

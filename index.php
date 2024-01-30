@@ -6,7 +6,9 @@ require_once "ChatNio.php";
 global $key;
 include "config.php";
 
+use com\hujiayucc\chatnio\bean\Token;
 use com\hujiayucc\chatnio\ChatNio;
+use com\hujiayucc\chatnio\data\ChatAsync;
 use com\hujiayucc\chatnio\enums\SubLevel;
 use com\hujiayucc\chatnio\exception\AuthException;
 use com\hujiayucc\chatnio\exception\BuyException;
@@ -68,3 +70,8 @@ try {
 } catch (AuthException|FiledException|BuyException $e) {
     echo("\n" . $e->getMessage());
 }
+
+// 同步调用
+$async = new ChatAsync(new Token($key));
+$async->sendMessage("写一段PHP调用WebSocket的示例");
+echo "\n" . "async send success: " . $async->getMessages();

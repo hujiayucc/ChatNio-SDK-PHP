@@ -8,6 +8,7 @@ use com\hujiayucc\chatnio\exception\BuyException;
 use com\hujiayucc\chatnio\exception\FiledException;
 use com\hujiayucc\chatnio\utils\GetClient;
 use com\hujiayucc\chatnio\utils\PostClient;
+use Exception;
 
 /** 订阅和礼包 */
 class Subscribe
@@ -28,7 +29,7 @@ class Subscribe
     {
         try {
             $client = new GetClient("/subscription", $this->key);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 
@@ -51,7 +52,7 @@ class Subscribe
     {
         try {
             $client = new GetClient("/subscription", $this->key);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 
@@ -89,7 +90,7 @@ class Subscribe
                     "level" => $level->getLevel()
                 )
             );
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 

@@ -1,0 +1,16 @@
+{
+  "name": "hujiayucc/chatnio",
+  "description": "ChatNio SDK PHP Version",
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "hujiayucc",
+      "email": "hujiayucc@qq.com"
+    }
+  ],
+  "require": {
+    "textalk/websocket": "^1.6.3",
+    "ext-json": "*"
+  }
+}
