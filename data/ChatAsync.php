@@ -2,6 +2,11 @@
 
 namespace com\hujiayucc\chatnio\data;
 
+require_once __DIR__ . "/../bean/MessageSegment.php";
+require_once __DIR__ . "/../exception/FiledException.php";
+require_once __DIR__ . "/../utils/WsClient.php";
+require_once __DIR__ . "/../utils/IWebSocketConnection.php";
+
 use com\hujiayucc\chatnio\bean\MessageSegment;
 use com\hujiayucc\chatnio\exception\FiledException;
 use com\hujiayucc\chatnio\utils\WsClient;

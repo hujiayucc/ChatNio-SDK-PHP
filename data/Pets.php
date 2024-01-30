@@ -2,6 +2,13 @@
 
 namespace com\hujiayucc\chatnio\data;
 
+require_once __DIR__ . "/../bean/Package.php";
+require_once __DIR__ . "/../exception/AuthException.php";
+require_once __DIR__ . "/../exception/BuyException.php";
+require_once __DIR__ . "/../exception/FiledException.php";
+require_once __DIR__ . "/../utils/GetClient.php";
+require_once __DIR__ . "/../utils/PostClient.php";
+
 use com\hujiayucc\chatnio\bean\Package;
 use com\hujiayucc\chatnio\exception\AuthException;
 use com\hujiayucc\chatnio\exception\BuyException;

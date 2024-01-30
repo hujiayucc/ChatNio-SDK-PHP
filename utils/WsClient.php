@@ -1,13 +1,18 @@
 <?php
 
 namespace com\hujiayucc\chatnio\utils;
+
+require_once __DIR__ . "/../bean/MessageSegment.php";
+require_once __DIR__ . "/../bean/Token.php";
+require_once __DIR__ . "/../ChatNio.php";
+require_once __DIR__ . "/IWebSocketConnection.php";
+require_once __DIR__ . "/../vendor/autoload.php";
+
 use com\hujiayucc\chatnio\bean\MessageSegment;
 use com\hujiayucc\chatnio\bean\Token;
 use com\hujiayucc\chatnio\ChatNio;
 use WebSocket\BadOpcodeException;
 use WebSocket\Client;
-
-require __DIR__ . "/../vendor/autoload.php";
 
 abstract class WsClient extends Client implements IWebSocketConnection
 {

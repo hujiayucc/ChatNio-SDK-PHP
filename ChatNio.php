@@ -2,20 +2,9 @@
 
 namespace com\hujiayucc\chatnio;
 
-$list = array(
-    "utils",
-    "data",
-    "exception",
-    "bean",
-    "enums"
-);
-// 引入所有需要的文件
-foreach ($list as $dir) {
-    foreach (glob($dir . "/*.php") as $filename)
-    {
-        require_once $filename;
-    }
-}
+require_once __DIR__ . "/data/Pets.php";
+require_once __DIR__ ."/data/Subscribe.php";
+require_once __DIR__ . "/data/Tasks.php";
 
 use com\hujiayucc\chatnio\data\Pets;
 use com\hujiayucc\chatnio\data\Subscribe;

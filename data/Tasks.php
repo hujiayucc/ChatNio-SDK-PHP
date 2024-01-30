@@ -1,6 +1,13 @@
 <?php
 
 namespace com\hujiayucc\chatnio\data;
+
+require_once __DIR__ . "/../bean/Message.php";
+require_once __DIR__ . "/../bean/TaskBean.php";
+require_once __DIR__ . "/../exception/AuthException.php";
+require_once __DIR__ . "/../exception/FiledException.php";
+require_once __DIR__ . "/../utils/GetClient.php";
+
 use com\hujiayucc\chatnio\bean\Message;
 use com\hujiayucc\chatnio\bean\TaskBean;
 use com\hujiayucc\chatnio\exception\AuthException;

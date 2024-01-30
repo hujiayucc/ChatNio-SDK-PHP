@@ -75,11 +75,13 @@ try {
 }
 
 // 同步调用
+require_once __DIR__ . "/data/ChatAsync.php";
 $async = new ChatAsync(new Token($key));
 $async->sendMessage("写一段PHP调用WebSocket的示例");
 echo "\n" . "async send success: " . $async->getMessages();
 
 // 异步调用
+require_once __DIR__ . "/data/ChatSync.php";
 $sync = new ChatSync(new Token($key), new class extends CustomSync
 {
 

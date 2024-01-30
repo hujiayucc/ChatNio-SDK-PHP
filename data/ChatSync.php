@@ -2,6 +2,11 @@
 
 namespace com\hujiayucc\chatnio\data;
 
+require_once __DIR__ . "/../bean/MessageSegment.php";
+require_once __DIR__ . "/../bean/Token.php";
+require_once __DIR__ . "/../utils/CustomSync.php";
+require_once __DIR__ . "/../utils/WsClient.php";
+
 use com\hujiayucc\chatnio\bean\MessageSegment;
 use com\hujiayucc\chatnio\bean\Token;
 use com\hujiayucc\chatnio\utils\CustomSync;

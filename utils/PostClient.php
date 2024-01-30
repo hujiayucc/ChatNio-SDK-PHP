@@ -2,6 +2,8 @@
 
 namespace com\hujiayucc\chatnio\utils;
 
+require_once __DIR__ . "/../ChatNio.php";
+
 use com\hujiayucc\chatnio\ChatNio;
 use Exception;
 

@@ -2,6 +2,8 @@
 
 namespace com\hujiayucc\chatnio\utils;
 
+require_once __DIR__ . "/../bean/MessageSegment.php";
+
 use com\hujiayucc\chatnio\bean\MessageSegment;
 
 interface IWebSocketConnection
