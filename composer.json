@@ -1,6 +1,7 @@
 {
   "name": "hujiayucc/chatnio",
   "description": "ChatNio SDK PHP Version",
+  "version": "0.0.1",
   "minimum-stability": "stable",
   "license": "Apache-2.0",
   "authors": [

@@ -16,7 +16,6 @@ abstract class WsClient extends Client implements IWebSocketConnection
      */
     public function __construct(Token $token)
     {
-        echo "uri: " . $this->getPath();
         parent::__construct(
             $this->getPath(),
             array(
@@ -24,9 +23,7 @@ abstract class WsClient extends Client implements IWebSocketConnection
             )
         );
         try {
-            print "\nsend: " . $token->__toString();
             $this->send($token->__toString());
-            echo "\nisConnected: " . ($this->isConnected() ? "true" : "false") . "\n";
         } catch (BadOpcodeException $e) {
             $this->onError($e);
         }
@@ -52,13 +49,11 @@ abstract class WsClient extends Client implements IWebSocketConnection
                 'web' => $enableWeb
             )
         );
-        print "\nsend: " . $body;
         $this->text($body);
         $json = json_decode($this->receive());
         while (!$json->end) {
             $this->onMessage(new MessageSegment($this->receive()));
             $json = json_decode($this->receive());
-            echo "\n" . $json->message;
         }
     }
 
