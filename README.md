@@ -5,10 +5,6 @@
 
 ## 二、快速开始
 
-- 通过Composer 安装(1)
-
-创建一个`composer.json`文件，然后将以下代码添加到`composer.json`中：
-
 ```json
 {
   "require": {
@@ -17,27 +13,9 @@
 }
 ```
 
-然后在命令行中执行以下命令：
-
-```shell
-composer install # 安装
-composer update # 更新
-```
-
-- 通过Composer 安装(2)
-
-```shell
-composer require hujiayucc/chatnio # 安装
-composer update # 更新
-```
-
-- 使用
-
 在开始使用 SDK 之前，你需要首先生成一个`ChatNio`实例，这需要提供一个由`ChatNio`服务提供的密钥：
 
 ```php
-require_once 'vendor/autoload.php';
-
 use com\hujiayucc\chatnio\ChatNio;
 $key = "你的密钥";
 $chatNio = new ChatNio(key);
