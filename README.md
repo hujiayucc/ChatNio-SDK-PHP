@@ -99,7 +99,6 @@ echo "\nTeenager: " . ($package->isTeenager() ? "true" : "false");
 ### 1. 同步方式
 
 ```php
-require_once __DIR__ . "/data/ChatAsync.php";
 $async = new ChatAsync(new Token($key));
 $async->sendMessage("写一段PHP调用WebSocket的示例");
 echo "\n" . "async send success: " . $async->getMessages();
@@ -107,7 +106,6 @@ echo "\n" . "async send success: " . $async->getMessages();
 ### 2. 异步方式
 
 ```php
-require_once __DIR__ . "/data/ChatSync.php";
 $sync = new ChatSync(new Token($key), new class extends CustomSync
 {
 
@@ -131,7 +129,7 @@ echo "\n" . "sync send success: " . $sync->getMessages();
 ```php
 <?php
 
-require_once "ChatNio.php";
+require_once "vendor/autoload.php";
 
 // 下面两个可以删掉，只是方便导入秘钥
 global $key;
@@ -206,13 +204,11 @@ try {
 }
 
 // 同步调用
-require_once __DIR__ . "/data/ChatAsync.php";
 $async = new ChatAsync(new Token($key));
 $async->sendMessage("写一段PHP调用WebSocket的示例");
 echo "\n" . "async send success: " . $async->getMessages();
 
 // 异步调用
-require_once __DIR__ . "/data/ChatSync.php";
 $sync = new ChatSync(new Token($key), new class extends CustomSync
 {
 
