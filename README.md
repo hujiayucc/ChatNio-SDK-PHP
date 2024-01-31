@@ -214,8 +214,8 @@ try {
 
 // 同步调用
 $async = new ChatAsync(new Token($key));
-$async->sendMessage("写一段PHP调用WebSocket的示例");
-echo "\n" . "async send success: " . $async->getMessages();
+$async->sendMessage("你好");
+echo "\n" . "async send success: " . $async->getMessages() . "\n";
 
 // 异步调用
 $sync = new ChatSync(new Token($key), new class extends CustomSync
@@ -223,7 +223,7 @@ $sync = new ChatSync(new Token($key), new class extends CustomSync
 
     function onMessage(MessageSegment $message)
     {
-        echo "\n" . $message->getMessage();
+        echo $message->getMessage();
     }
 
     function onError(Exception $exception)
