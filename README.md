@@ -31,6 +31,15 @@ composer require hujiayucc/chatnio # 安装
 composer update # 更新
 ```
 
+- **通过Git 安装**
+
+```shell
+git clone https://github.com/hujiayucc/ChatNio-SDK-PHP.git
+cd ChatNio-SDK-PHP
+composer install # 安装
+composer update # 更新
+```
+
 - **使用**
 
 在开始使用 SDK 之前，你需要首先生成一个`ChatNio`实例，这需要提供一个由`ChatNio`服务提供的密钥：
