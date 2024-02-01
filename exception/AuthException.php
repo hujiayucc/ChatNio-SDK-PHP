@@ -1,8 +1,10 @@
 <?php
 namespace com\hujiayucc\chatnio\exception;
 
+use Exception;
+
 /** 认证失败 */
-class AuthException extends \Exception
+class AuthException extends Exception
 {
     /**
      * 认证失败

@@ -13,6 +13,7 @@ use com\hujiayucc\chatnio\bean\TaskBean;
 use com\hujiayucc\chatnio\exception\AuthException;
 use com\hujiayucc\chatnio\exception\FiledException;
 use com\hujiayucc\chatnio\utils\GetClient;
+use Exception;
 
 /** 对话 */
 class Tasks
@@ -37,7 +38,7 @@ class Tasks
     {
         try {
             $client = new GetClient("/conversation/list", $this->key);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 
@@ -73,7 +74,7 @@ class Tasks
     {
         try {
             $client = new GetClient("/conversation/load?id=" . $id, $this->key);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 
@@ -108,7 +109,7 @@ class Tasks
     {
         try {
             $client = new GetClient("/conversation/delete?id=" . $id, $this->key);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new FiledException($e->getMessage());
         }
 
